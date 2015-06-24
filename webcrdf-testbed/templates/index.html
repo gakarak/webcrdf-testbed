@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block content %}
+    <style type="text/css">
+        .ddisabled {
+            z-index: 1000;
+            background-color: lightgrey;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+    </style>
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <header class="jumbotron jumbotron-custom hero-spacer">
+            <h2><center>On-line services for Medical Image Analysis & Retrieval</center></h2>
+            <script type="text/javascript">
+                function src_on_hover(el, src) {
+                    el.setAttribute('src', src);
+                }
+                /*
+                function src_un_hover(el, src) {
+                    el.setAttribute('src', src);
+                }
+                */
+            </script>
+        </header>
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appcbir/"><img src="/data/img/cbir-ct0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/cbir-ct1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/cbir-ct0.png');"></a>
+                    <div class="caption">
+                        <h3>CBIR-CT</h3>
+                        <p>Explore CT-Archive: ~14000 CT-scans, ~1.5 millions of 2D-slices.</p>
+                        <p>
+                            <a href="/appcbir/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appxray/"><img src="/data/img/roisearch0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/roisearch1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/roisearch0.png');"></a>
+                    <div class="caption">
+                        <h3>ROI-Search</h3>
+                        <p>Explore X-Ray archive and search similar image regions.</p>
+                        <p>
+                            <a href="/appxray/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appsegmxr/"><img src="/data/img/xraysegm0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/xraysegm1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/xraysegm0.png');"></a>
+                    <div class="caption">
+                        <h3>X-Ray Segmentation</h3>
+                        <p>Upload your X-Ray and segment lung region automatically.</p>
+                        <p>
+                            <a href="/appsegmxr/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <a href="/appwebcam/"><img src="/data/img/webcam0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/webcam1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/webcam0.png');"></a>
+                    <div class="caption">
+                        <h3>WebCam Search</h3>
+                        <p>Searching similar WebCam frames in real-time. Just for fun.</p>
+                        <p>
+                            <a href="/appwebcam/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appmelanoma/"><img src="/data/img/appmelanoma0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/appmelanoma1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/appmelanoma0.png');"></a>
+                    <div class="caption">
+                        <h3>Skin lesion</h3>
+                        <p>Upload and examine your skin lesion images automatically.</p>
+                        <p>
+                            <a href="/appmelanoma/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appsegmct/"><img src="/data/img/appsegmct0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/appsegmct1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/appsegmct0.png');"></a>
+                    <div class="caption">
+                        <h3>Lung Segmentation</h3>
+                        <p>Upload your CT-images and segment lung automatically. </p>
+                        <p>
+                            <a href="/appsegmct/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/appdrugres/"><img src="/data/img/appdrugres0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/appdrugres1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/appdrugres0.png');"></a>
+                    <div class="caption">
+                        <h3>Drug Resistant</h3>
+                        <p>Upload your CT and X-Ray images and check MDR tuberculosis. </p>
+                        <p>
+                            <a href="/appdrugres/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail ddisabled">
+                    <!--img src="http://placehold.it/800x500" alt=""-->
+                    <a href="/apphistology/"><img src="/data/img/apphistology0.png" alt="" class="img-thumbnail"
+                         onmouseover="src_on_hover(this,'/data/img/apphistology1.png');"
+                         onmouseout ="src_on_hover(this,'/data/img/apphistology0.png');"></a>
+                    <div class="caption">
+                        <h3>Histology</h3>
+                        <p>Explore high-resolution histology scans and segment it.</p>
+                        <p>
+                            <a href="/apphistology/" class="btn btn-primary">Run app</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
