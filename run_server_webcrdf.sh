@@ -5,4 +5,5 @@
 
 cd webcrdf-testbed
 
+python manage.py syncdb --noinput
 python manage.py runserver --insecure 127.0.0.1:8080
