@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Ubuntu instruction
+#
+
+# Install Git
+apt-get install git
+
+# Install Elastix (non-rigid 2D/3D image registration tool)
+apt-get install elastix
+
+# Install Python packages (from official Ubuntu repositories)
+apt-get install python-numpy python-scipy python-matplotlib python-opencv
+apt-get install python-skimage python-sklearn
+apt-get install python-dicom python-nibabel
+apt-get install python-django
+
+# Clone Test version WEBCRDF project from github
+cd $HOME
+mkdir github.com
+cd github.com
+git clone https://github.com/gakarak/webcrdf-testbed.git webcrdf-testbed.git
+cd webcrdf-testbed.git
+chmod u+x run_server_webcrdf.sh
+./run_server_webcrdf.sh
+
+# !!!! IMPORTANT !!!!
+# At the testing phase, we use the built-in Django web server
+# bash script for start django server is "run_server_webcrdf.sh"
+#
+# change in appropriate values IP and PORT in command line:
+#   python manage.py runserver --insecure 127.0.0.1:8080
+# or simple run 
