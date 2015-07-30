@@ -31,3 +31,49 @@ chmod u+x run_server_webcrdf.sh
 # change in appropriate values IP and PORT in command line:
 #   python manage.py runserver --insecure 127.0.0.1:8080
 # or simple run 
+
+
+###
+### (1) Configure with Apache WEB-Server over http-proxy mod.
+###     This is good choice for development version
+###
+
+# Install apache:
+apt-get install apache2
+
+# Enable proxy-http:
+a2enmod proxy_http
+
+# prepare config file for VirtualHost:
+echo "
+<VirtualHost *:80>
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ServerName webcrdf-dev.belarus.ibrsp.org
+    ProxyPass / http://localhost:8080/
+    ProxyPassReverse / http://localhost:8080/
+</VirtualHost>
+" > /etc/apache2/sites-available/default-proxy-8080.conf
+
+# Enable site-config
+a2ensite default-proxy-8080
+
+#restart apache
+service apache2 restart
+
+# run local version django-server (see instuction above)
+# python manage.py runserver --insecure 127.0.0.1:8080
+# To save the ssh-session service running locally,
+# you can use the utility "screen"
+#		1. run screen
+#		2. run django web-server
+#		3. Ctrl+a to diconnect from screen-session
+
+
+
+###
+### (2) Configure with Apache WEB-Server over http-wsgi mod.
+###     This is good choice for production version
+###
+
+# ... instruction coming soon
